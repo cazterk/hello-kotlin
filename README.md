@@ -1,2 +1,2 @@
-# My Welcome to Kotlin
+# My welcome to Kotlin
 - basics in kotlin
