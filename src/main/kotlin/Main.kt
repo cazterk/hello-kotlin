@@ -11,12 +11,40 @@ fun main(args: Array<String>) {
     val cat = Cat()
     cat.makeSound()
 
+    // anonymous class
     val bear = object: Animal("Bear"){
         override fun makeSound() {
             println("I'm a bear!")
         }
     }
 
+    // lambda function
+    val list = listOf("kotlin", "is" , "fun")
+    val count= list.customCount{currentString ->
+        currentString.length >= 3
+    }
+    println(count)
+
+    // try catch all exceptions
+    val number = readLine() ?: "0"
+    val parsedNumber= try{
+        number.toInt()
+    }catch (e:Exception){
+        0
+    }
+    println(parsedNumber)
+
+
+}
+
+fun <T>List<T>.customCount(function: (T) -> Boolean): Int {
+    var counter = 0
+    for(string in this){
+        if(function(string)){
+            counter++
+        }
+    }
+    return counter
 }
 fun Int.isOdd(): Boolean {
     return this % 2==1
