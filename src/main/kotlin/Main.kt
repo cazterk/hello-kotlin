@@ -11,6 +11,12 @@ fun main(args: Array<String>) {
     val cat = Cat()
     cat.makeSound()
 
+    val bear = object: Animal("Bear"){
+        override fun makeSound() {
+            println("I'm a bear!")
+        }
+    }
+
 }
 fun Int.isOdd(): Boolean {
     return this % 2==1
